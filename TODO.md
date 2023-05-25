@@ -2,14 +2,14 @@
 
 ## 1. controllers folder
 
-- dashboard-routes.js
-- home-routes.js
+<!-- - dashboard-routes.js -->
+<!-- - home-routes.js -->
 - api Folder
-  - user-routes.js
+  <!-- - user-routes.js -->
 
 ## 2. utils folder
 
-- auth.js
+<!-- - auth.js -->
 
 ## 3. views Folder
 
@@ -22,4 +22,4 @@
 - single-post.handlebars
 - layouts Folder
   - dashboard.handlebars
-  - main.handlebars
+  <!-- - main.handlebars -->

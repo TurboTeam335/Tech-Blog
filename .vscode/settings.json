@@ -18,5 +18,20 @@
     "titleBar.inactiveBackground": "#51676b99",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "#51676b"
+  "peacock.color": "#51676b",
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "driver": "MySQL",
+      "database": "dish_db",
+      "name": "local",
+      "username": "root",
+      "password": "rootroot"
+    }
+  ]
 }
