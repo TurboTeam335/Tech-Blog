@@ -1,24 +1,31 @@
 <html>
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>Tech Blog</title>
     <link rel="stylesheet" href="/css/style.css" />
-</head>
-<body>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="flex-row">
+        <li class="li-inline nav-item"><a href="/">Home</a></li>
+        <li class="li-inline nav-item"><a href="/signup">Sign Up</a></li>
+        <li class="li-inline nav-item"><a href="/login">Login</a></li>
+      </ul>
+    </nav>
     <header>
-    <h1>
+      <h1>
         User Registry
-    </h1>
-    <!-- Only display the logout button if the user is logged in -->
-    {{#if logged_in}}
+      </h1>
+      <!-- Only display the logout button if the user is logged in -->
+      {{#if logged_in}}
         <nav>
-        <button class="btn" id="logout">logout</button>
+          <button class="btn" id="logout">logout</button>
         </nav>
-    {{/if}}
+      {{/if}}
     </header>
 
     <main>
-    {{{body}}}
+      {{{body}}}
     </main>
     <footer>
 
@@ -26,7 +33,7 @@
 
     <!-- Only include the logout script if the user is logged in -->
     {{#if logged_in}}
-    <script src="/js/logout.js"></script>
+      <script src="/js/logout.js"></script>
     {{/if}}
- </body>
+  </body>
 </html>
