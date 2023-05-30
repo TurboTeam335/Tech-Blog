@@ -9,12 +9,13 @@ router.get("/", withAuth, async (req, res) => {
     // TODO: 1. Find all Posts for a logged in user (use the req.session.userId)
     const postData = await Post.findAll({
       where: {
-        user_id: req.session.id,
+        //user_id: req.session.id,
+        user_id: req.session.user_id,
       },
     });
     // TODO: 2. Serialize data (use .get() method, or use raw: true, nest: true in query options)
-    const posts = postData.map((post) => post.get({ plain: true }));
-    console.log(postData)
+    const posts = postData.map(post => post.get({ plain: true }));
+    console.log(postData);
     // TODO: 3. Render the 'all-posts-admin' template in the 'dashboard' layout with the posts data
     res.render("all-posts-admin", {
       layout: "dashboard",
@@ -22,7 +23,7 @@ router.get("/", withAuth, async (req, res) => {
     });
   } catch (err) {
     // console.log(err)
-    
+
     res.status("login");
   }
 });
@@ -38,7 +39,7 @@ router.get("/edit/:id", withAuth, async (req, res) => {
     // TODO: 1. Find a Post by primary key
     const postData = await Post.findByPk(req.params.id);
     // TODO: 2. Serialize data (use .get() method, or use raw: true, nest: true in query options)
-    if (postData){
+    if (postData) {
       const post = postData.get({ plain: true });
       res.render("edit-post", {
         layout: "dashboard",
