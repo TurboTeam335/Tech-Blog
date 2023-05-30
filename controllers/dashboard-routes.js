@@ -14,7 +14,7 @@ router.get("/", withAuth, async (req, res) => {
       },
     });
     // TODO: 2. Serialize data (use .get() method, or use raw: true, nest: true in query options)
-    const posts = postData.map(post => post.get({ plain: true }));
+    const posts = postData.map((post) => post.get({ plain: true }));
     console.log(postData);
     // TODO: 3. Render the 'all-posts-admin' template in the 'dashboard' layout with the posts data
     res.render("all-posts-admin", {
@@ -24,7 +24,7 @@ router.get("/", withAuth, async (req, res) => {
   } catch (err) {
     // console.log(err)
 
-    res.status("login");
+    res.redirect("login");
   }
 });
 
@@ -45,6 +45,8 @@ router.get("/edit/:id", withAuth, async (req, res) => {
         layout: "dashboard",
         post,
       });
+    } else {
+      res.status(404).end();
     }
 
     // TODO: 3. Render the 'edit-post' template in the 'dashboard' layout with the post data
