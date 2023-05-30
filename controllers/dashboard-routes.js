@@ -9,8 +9,8 @@ router.get("/", withAuth, async (req, res) => {
     // TODO: 1. Find all Posts for a logged in user (use the req.session.userId)
     const postData = await Post.findAll({
       where: {
-        //user_id: req.session.id,
-        user_id: req.session.user_id,
+        //userId: req.session.id,
+        userId: req.session.userId,
       },
     });
     // TODO: 2. Serialize data (use .get() method, or use raw: true, nest: true in query options)
@@ -37,7 +37,7 @@ router.get("/new", withAuth, (req, res) => {
 router.get("/edit/:id", withAuth, async (req, res) => {
   try {
     // TODO: 1. Find a Post by primary key
-    const postData = await Post.findByPk(req.params.id);
+    const postData = await Post.findByPk(req.params.userId);
     // TODO: 2. Serialize data (use .get() method, or use raw: true, nest: true in query options)
     if (postData) {
       const post = postData.get({ plain: true });

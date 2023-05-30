@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
 
     // TODO: save the user id, username, and loggedIn status to the req.session
     req.session.save(() => {
-      req.session.id = newUser.id;
+      req.session.id = newUser.userId;
       req.session.username = newUser.username;
       req.session.logged_in = true;
 
@@ -43,7 +43,7 @@ router.post("/login", async (req, res) => {
 
     // TODO: save the user id, username, and loggedIn status to the req.session
     req.session.save(() => {
-      req.session.id = user.id;
+      req.session.id = user.userId;
       req.session.username = user.username;
       req.session.logged_in = true;
   
