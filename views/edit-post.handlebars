@@ -1,15 +1,13 @@
- <h1>Edit Post</h1>
+<h1>Edit Post</h1>
 
-    <form action="/posts/{{post.id}}" method="PUT">
-        <input type="hidden" name="postID" value="PUT">
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" value="{{post.title}}">
-        <label for="body">Body:</label>
-        <textarea id="body" name="body">{{post.body}}</textarea>
-        <button type="submit">Save Changes</button>
-        {{!-- <button type="submit">Save Changes</button> --}}
+<form action="/posts/{{post.id}}" method="PUT">
+    <input type="hidden" name="postID" value="PUT" />
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" value="{{post.title}}" />
+    <label for="body">Body:</label>
+    <textarea id="body" name="body">{{post.body}}</textarea>
+    <button type="submit" class="btn">Save Changes</button>
+    <button type="button" id="delete-btn" class="btn">Delete</button>
+</form>
 
-    </form>
-
-    <script src="/js/edit.js"></script>
-
+<script src="/js/edit.js"></script>

@@ -33,24 +33,29 @@ router.get("/new", withAuth, (req, res) => {
     layout: "dashboard",
   });
 });
-
+// localhost:3001/dashboard/edit/1
 router.get("/edit/:id", withAuth, async (req, res) => {
   try {
     // TODO: 1. Find a Post by primary key
-    const postData = await Post.findByPk(req.params.userId);
+    const postData = await Post.findByPk(req.params.id);
+    console.log('postData', postData)
     // TODO: 2. Serialize data (use .get() method, or use raw: true, nest: true in query options)
     if (postData) {
       const post = postData.get({ plain: true });
+      console.log('post', post);
       res.render("edit-post", {
         layout: "dashboard",
         post,
       });
     } else {
+      console.log('else')
       res.status(404).end();
     }
 
     // TODO: 3. Render the 'edit-post' template in the 'dashboard' layout with the post data
   } catch (err) {
+    console.log('catch err')
+    console.log(err);
     res.redirect("login");
   }
 });
