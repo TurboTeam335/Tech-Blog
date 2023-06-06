@@ -3,7 +3,7 @@
     <h1>Edit Post</h1>
   </div>
   <form id="edit-post-form" action="/posts/{{post.id}}" method="PUT">
-    <input type="hidden" name="postID" value="PUT" />
+    <input type="hidden" name="post-id" value="{{post.id}}"/>
     <label for="title">Title:</label>
     <input type="text" id="title" name="title" value="{{post.title}}" />
     <label for="body">Body:</label>

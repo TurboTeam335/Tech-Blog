@@ -1,10 +1,10 @@
-const postId = document.querySelector('input[name="postID"]').value;
+const postId = document.querySelector('input[name="post-id"]').value;
 
 const editFormHandler = async function(event) {
   event.preventDefault();
 
-  const title = document.querySelector('input[name="post-title"]').value;
-  const body = document.querySelector('textarea[name="post-body"]').value;
+  const title = document.querySelector('input[name="title"]').value;
+  const contents = document.querySelector('textarea[name="body"]').value;
 
   console.log(postId);
 
@@ -12,7 +12,7 @@ const editFormHandler = async function(event) {
     method: 'PUT',
     body: JSON.stringify({
       title,
-      body
+      contents
     }),
     headers: {
       'Content-Type': 'application/json'
